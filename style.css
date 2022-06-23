@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.circles{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e6ecea;
+  overflow: hidden;
+}
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1{
+  background-color: green;
+  width: 630px;
+  height: 630px;
+  margin: -315px 0 0 -315px;
+}
+
+.circle2{
+  background-color: red;
+  width: 420px;
+  height: 420px;
+  z-index: 1;
+  margin: -220px 0 0 -220px;
+}
+
+.circle3{
+  background-color: purple;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  margin: -100px 0 0 -100px;
+}
+
+.cursor{
+  position: fixed;
+  background-color: blue;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: -7.5px 0 0 -7.5px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.content{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* プロパティは2つの要素が重なったときの見え方の指定 */
+  /* 事前準備として2つ以上のDOM要素を用意して、それぞれを絶対座標を利用して重ねて配置しましょう。z-index的に上位の要素にmix-blend-modeを指定 */
+  mix-blend-mode: screen;
+  z-index: 4;
+}
+
+.content h1{
+  font-size: 10rem;
+}
